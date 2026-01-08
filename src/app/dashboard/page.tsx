@@ -420,15 +420,32 @@ export default function Page() {
 
 
 
-const MetricItem = ({ counter, label, trend, val, color }) => (
+interface MetricItemProps {
+  counter: number | string;
+  label: string;
+  trend: "up" | "down";
+  val: number | string;
+  color: "green" | "red";
+}
+
+const MetricItem = ({ counter, label, trend, val, color }: MetricItemProps) => (
   <div className="flex flex-col">
     <div className="flex items-start gap-2">
       <span className="text-[52px] font-semibold tracking-tight">{counter}</span>
-      <span className={`${color === 'green' ? 'bg-[#E7F9ED] text-[#28C76F]' : 'bg-[#FFEDEA] text-[#FF4D4D]'} px-2 py-0.5 rounded-md text-[11px] font-bold mt-3`}>
-        {trend === 'up' ? '↑' : '↓'}{val}
+      <span
+        className={`${
+          color === "green"
+            ? "bg-[#E7F9ED] text-[#28C76F]"
+            : "bg-[#FFEDEA] text-[#FF4D4D]"
+        } px-2 py-0.5 rounded-md text-[11px] font-bold mt-3`}
+      >
+        {trend === "up" ? "↑" : "↓"}
+        {val}
       </span>
     </div>
-    <span className="text-[#7A8699] text-2xl font-medium -mt-2 uppercase tracking-tighter">{label}</span>
+    <span className="text-[#7A8699] text-2xl font-medium -mt-2 uppercase tracking-tighter">
+      {label}
+    </span>
   </div>
 );
 
