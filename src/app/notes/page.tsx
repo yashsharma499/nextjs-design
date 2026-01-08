@@ -37,7 +37,7 @@ export default function Notes() {
         </div>
 
         <div className="flex items-center gap-2">
-          <Image src="/notification_icon.png" alt="" width={40} height={40} className="w-8 h-8 md:w-10 md:h-10" />
+          <Image src="/Notification_icon.png" alt="" width={40} height={40} className="w-8 h-8 md:w-10 md:h-10" />
           <Image src="/profileavatar.png" alt="" width={40} height={40} className="w-8 h-8 md:w-10 md:h-10" />
         </div>
       </header>
