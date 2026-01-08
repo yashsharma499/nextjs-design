@@ -481,7 +481,12 @@ const MetricItem = ({ counter, label, trend, val, color }: MetricItemProps) => (
   </div>
 );
 
-const BubbleButton = ({ label, active = false }) => (
+interface BubbleButtonProps {
+  label: string;
+  active?: boolean;
+}
+
+const BubbleButton = ({ label, active = false }: BubbleButtonProps) => (
   <button
     className={`
       px-6 py-2.5 rounded-full text-sm font-bold transition-all whitespace-nowrap
@@ -497,7 +502,11 @@ const BubbleButton = ({ label, active = false }) => (
   </button>
 );
 
-const BubbleIcon = ({ Icon }) => (
+interface BubbleIconProps {
+  Icon: React.ComponentType<{ size?: number }>;
+}
+
+const BubbleIcon = ({ Icon }: BubbleIconProps) => (
   <div
     className="
       w-12 h-12 rounded-full flex items-center justify-center cursor-pointer
@@ -964,7 +973,12 @@ const DarkMetric = ({ counter, label, trend, val, color }: DarkMetricProps) => (
 );
 
 /* DARK BUBBLE BUTTON */
-const DarkBubbleButton = ({ label, active = false }) => (
+interface DarkBubbleButtonProps {
+  label: string;
+  active?: boolean;
+}
+
+const DarkBubbleButton = ({ label, active = false }: DarkBubbleButtonProps) => (
   <button
     className={`
       px-6 py-2.5 rounded-full text-sm font-bold transition-all whitespace-nowrap
@@ -977,7 +991,11 @@ const DarkBubbleButton = ({ label, active = false }) => (
 );
 
 /* DARK ICON BUTTON */
-const DarkBubbleIcon = ({ Icon }) => (
+interface DarkBubbleIconProps {
+  Icon: React.ComponentType<{ size?: number }>;
+}
+
+const DarkBubbleIcon = ({ Icon }: DarkBubbleIconProps) => (
   <div
     className="
       w-12 h-12 rounded-full flex items-center justify-center cursor-pointer
