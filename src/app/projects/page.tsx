@@ -47,7 +47,7 @@ export default function ProjectsPage() {
         {/* Right Icons */}
         <div className="flex items-center gap-3">
           <Image
-            src="/notification_icon.png"
+            src="/Notification_icon.png"
             alt="Notification"
             width={36}
             height={36}
