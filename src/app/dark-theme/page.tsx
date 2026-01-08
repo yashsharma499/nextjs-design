@@ -25,22 +25,20 @@ export default function CombinedPage() {
   return (
     <div className="w-full min-h-screen">
       {/* THEME TOGGLE BUTTON */}
-      <div className="absolute top-10 right-40 z-50">
-  <button
-    onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-    className="w-14 h-14 rounded-full bg-black text-white flex items-center justify-center shadow-md cursor-pointer"
-  >
-    {theme === "light" ? "🌙" : "☀️"}
-  </button>
-</div>
+      <div className="absolute top-4 right-4 z-50 md:top-10 md:right-40">
+        <button
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-black text-white flex items-center justify-center shadow-md cursor-pointer"
+        >
+          {theme === "light" ? "🌙" : "☀️"}
+        </button>
+      </div>
 
       {/* CONDITIONAL RENDERING */}
       {theme === "light" ? <LightPage /> : <DarkPage />}
     </div>
   );
 }
-
-
 
 function LightPage() {
   const router = useRouter();
@@ -84,7 +82,7 @@ function LightPage() {
       </aside>
 
       {/* MAIN CONTENT START */}
-      <main className="flex-1 p-4 md:p-8 overflow-x-hidden">
+      <main className="flex-1 p-2 md:p-4 lg:p-8 overflow-x-hidden">
 
         {/* HEADER SECTION */}
         <header className="flex flex-wrap md:flex-nowrap items-center justify-between mb-12 gap-6">
@@ -165,46 +163,46 @@ function LightPage() {
 
         
         {/* WORKSPACE & METRICS */}
-<section className="flex items-center mb-16 px-2 max-w-full">
-  <div className="flex items-center gap-6 mr-12">
-    <div className="h-[64px] flex items-center">
-      <img src="/workspace.png" className="h-full object-contain" />
-    </div>
+        <section className="flex items-center mb-16 px-2 max-w-full">
+          <div className="flex items-center gap-6 mr-12">
+            <div className="h-[64px] flex items-center">
+              <img src="/workspace.png" className="h-full object-contain" />
+            </div>
 
-    <div className="h-[52px] flex items-center ml-4 cursor-pointer">
-      <img src="/newtaskbtn.png" className="h-full object-contain" />
-    </div>
-  </div>
+            <div className="h-[52px] flex items-center ml-4 cursor-pointer">
+              <img src="/newtaskbtn.png" className="h-full object-contain" />
+            </div>
+          </div>
 
-  {/* METRIC ITEMS */}
-  <div className="flex gap-16">
-    <MetricItem counter="34" label="Deals" trend="up" val="3" color="green" />
-    <MetricItem counter="20" label="won" trend="down" val="2" color="red" />
-    <MetricItem counter="3" label="lost" trend="down" val="1" color="red" />
-  </div>
+          {/* METRIC ITEMS */}
+          <div className="flex gap-16">
+            <MetricItem counter="34" label="Deals" trend="up" val="3" color="green" />
+            <MetricItem counter="20" label="won" trend="down" val="2" color="red" />
+            <MetricItem counter="3" label="lost" trend="down" val="1" color="red" />
+          </div>
 
-  {/* NEW PAGE NAV BUTTONS — ADDED HERE */}
-  <div className="flex gap-6 ml-12">
+          {/* NEW PAGE NAV BUTTONS — ADDED HERE */}
+          <div className="flex gap-6 ml-12">
 
-    {/* BUTTON 1 */}
-    <button
-      onClick={() => router.push("/sales-engagement")}
-      className="px-6 py-3 rounded-full bg-black text-white text-sm font-medium shadow-md flex items-center gap-2 hover:bg-[#222] cursor-pointer"
-    >
+            {/* BUTTON 1 */}
+            <button
+              onClick={() => router.push("/sales-engagement")}
+              className="px-6 py-3 rounded-full bg-black text-white text-sm font-medium shadow-md flex items-center gap-2 hover:bg-[#222] cursor-pointer"
+            >
 
-      Sales Engagement
-    </button>
+              Sales Engagement
+            </button>
 
-    {/* BUTTON 2 */}
-    <button
-      onClick={() => router.push("/projects")}
-      className="px-6 py-3 rounded-full bg-black text-white text-sm font-medium shadow-md flex items-center gap-2 hover:bg-[#222] cursor-pointer"
-    >
-      Projects
-    </button>
+            {/* BUTTON 2 */}
+            <button
+              onClick={() => router.push("/projects")}
+              className="px-6 py-3 rounded-full bg-black text-white text-sm font-medium shadow-md flex items-center gap-2 hover:bg-[#222] cursor-pointer"
+            >
+              Projects
+            </button>
 
-  </div>
-</section>
+          </div>
+        </section>
 
         {/* NEW LEADS SECTION */}
         <section className="mb-20 px-2">
@@ -337,7 +335,7 @@ function LightPage() {
 
           </div>
 
-          <div className="flex gap-6 w-full pr-10 overflow-x-auto md:overflow-x-hidden">
+          <div className="flex gap-6 w-full pr-10 overflow-x-hidden md:overflow-x-auto lg:overflow-x-hidden">
 
             {/* ORANGE CARD */}
             <div className="relative w-[360px] h-[300px] shrink-0">
@@ -441,7 +439,6 @@ function LightPage() {
             ))}
 
           </div>
-
         </section>
 
       </main>
@@ -839,7 +836,7 @@ const router = useRouter();
             </div>
           </div>
 
-          <div className="flex gap-6 w-full pr-10 overflow-x-auto md:overflow-x-hidden">
+          <div className="flex gap-6 w-full pr-10 overflow-x-hidden md:overflow-x-auto lg:overflow-x-hidden">
 
             <div className="relative w-[360px] h-[300px] shrink-0">
               <img src="/dark/Unionorange.png" className="absolute inset-0 w-full h-full object-contain" />
@@ -909,7 +906,6 @@ const router = useRouter();
 
                   <img src="/dark/Group 38 (1).png" className="w-[36px]" />
                 </div>
-
               </div>
             ))}
 
