@@ -450,10 +450,19 @@ function LightPage() {
 }
 
 /* SUPPORT COMPONENTS FOR LIGHT THEME */
-const MetricItem = ({ counter, label, trend, val, color }) => (
+interface MetricItemProps {
+  counter: number | string;
+  label: string;
+  trend: "up" | "down";
+  val: number | string;
+  color: "green" | "red";
+}
+
+const MetricItem = ({ counter, label, trend, val, color }: MetricItemProps) => (
   <div className="flex flex-col">
     <div className="flex items-start gap-2">
       <span className="text-[52px] font-semibold tracking-tight">{counter}</span>
+
       <span
         className={`${
           color === "green"
@@ -465,6 +474,7 @@ const MetricItem = ({ counter, label, trend, val, color }) => (
         {val}
       </span>
     </div>
+
     <span className="text-[#7A8699] text-2xl font-medium -mt-2 uppercase tracking-tighter">
       {label}
     </span>
@@ -922,10 +932,19 @@ const router = useRouter();
 }
 
 /* SUPPORT COMPONENTS FOR LIGHT THEME */
-const DarkMetric= ({ counter, label, trend, val, color }) => (
+interface DarkMetricProps {
+  counter: number | string;
+  label: string;
+  trend: "up" | "down";
+  val: number | string;
+  color: "green" | "red";
+}
+
+const DarkMetric = ({ counter, label, trend, val, color }: DarkMetricProps) => (
   <div className="flex flex-col">
     <div className="flex items-start gap-2">
       <span className="text-[52px] font-semibold tracking-tight">{counter}</span>
+
       <span
         className={`${
           color === "green"
@@ -937,6 +956,7 @@ const DarkMetric= ({ counter, label, trend, val, color }) => (
         {val}
       </span>
     </div>
+
     <span className="text-[#7A8699] text-2xl font-medium -mt-2 uppercase tracking-tighter">
       {label}
     </span>
