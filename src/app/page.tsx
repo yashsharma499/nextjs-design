@@ -164,8 +164,49 @@ function LightPage() {
         </header>
 
         
-        {/* WORKSPACE & METRICS */}
-<section className="flex items-center mb-16 px-2 max-w-full">
+       
+{/* <section className="flex items-center mb-16 px-2 max-w-full">
+  <div className="flex items-center gap-6 mr-12">
+    <div className="h-[64px] flex items-center">
+      <img src="/workspace.png" className="h-full object-contain" />
+    </div>
+
+    <div className="h-[52px] flex items-center ml-4 cursor-pointer">
+      <img src="/newtaskbtn.png" className="h-full object-contain" />
+    </div>
+  </div>
+
+
+  <div className="flex gap-16">
+    <MetricItem counter="34" label="Deals" trend="up" val="3" color="green" />
+    <MetricItem counter="20" label="won" trend="down" val="2" color="red" />
+    <MetricItem counter="3" label="lost" trend="down" val="1" color="red" />
+  </div>
+
+  
+  <div className="flex gap-6 ml-12">
+
+    <button
+      onClick={() => router.push("/sales-engagement")}
+      className="px-6 py-3 rounded-full bg-black text-white text-sm font-medium shadow-md flex items-center gap-2 hover:bg-[#222] cursor-pointer"
+    >
+
+      Sales Engagement
+    </button>
+
+
+    <button
+      onClick={() => router.push("/projects")}
+      className="px-6 py-3 rounded-full bg-black text-white text-sm font-medium shadow-md flex items-center gap-2 hover:bg-[#222] cursor-pointer"
+    >
+      Projects
+    </button>
+
+  </div>
+</section> */}
+<section className="flex flex-wrap items-center justify-between mb-16 px-2 w-full">
+
+  {/* WORKSPACE IMAGES */}
   <div className="flex items-center gap-6 mr-12">
     <div className="h-[64px] flex items-center">
       <img src="/workspace.png" className="h-full object-contain" />
@@ -177,60 +218,61 @@ function LightPage() {
   </div>
 
   {/* METRIC ITEMS */}
-  <div className="flex gap-16">
+  <div className="flex gap-12 flex-wrap">
     <MetricItem counter="34" label="Deals" trend="up" val="3" color="green" />
     <MetricItem counter="20" label="won" trend="down" val="2" color="red" />
     <MetricItem counter="3" label="lost" trend="down" val="1" color="red" />
   </div>
 
-  {/* NEW PAGE NAV BUTTONS — ADDED HERE */}
-  <div className="flex gap-6 ml-12">
-
-    {/* BUTTON 1 */}
+  {/* PAGE NAV BUTTONS */}
+  <div className="flex gap-6 ml-12 flex-wrap">
     <button
       onClick={() => router.push("/sales-engagement")}
       className="px-6 py-3 rounded-full bg-black text-white text-sm font-medium shadow-md flex items-center gap-2 hover:bg-[#222] cursor-pointer"
     >
-
       Sales Engagement
     </button>
 
-    {/* BUTTON 2 */}
     <button
       onClick={() => router.push("/projects")}
       className="px-6 py-3 rounded-full bg-black text-white text-sm font-medium shadow-md flex items-center gap-2 hover:bg-[#222] cursor-pointer"
     >
       Projects
     </button>
-
   </div>
+
 </section>
+
 
         {/* NEW LEADS SECTION */}
         <section className="mb-20 px-2">
 
-          <div className="flex items-center mb-8">
+          <div className="flex flex-wrap items-center mb-8 gap-4">
 
-            <h2 className="text-3xl font-bold">New Leads</h2>
+  {/* TITLE */}
+  <h2 className="text-3xl font-bold">New Leads</h2>
 
-            <span className="text-gray-400 text-lg border-b-2 border-gray-800 pb-1 cursor-pointer ml-10">
-              7 Leads
-            </span>
+  {/* LEAD COUNT */}
+  <span className="text-gray-400 text-lg border-b-2 border-gray-800 pb-1 cursor-pointer ml-10 sm:ml-10 ml-0">
+    7 Leads
+  </span>
 
-            <div className="w-20"></div>
+  {/* SPACER — now hides on mobile */}
+  <div className="w-20 hidden md:block"></div>
 
-            <div className="flex items-center gap-3">
-              <BubbleIcon Icon={Search} />
-              <BubbleIcon Icon={SlidersHorizontal} />
-              <BubbleButton label="All" active />
-              <BubbleButton label="🔥 Hot Client" />
-              <BubbleButton label="Great interest" />
-              <BubbleButton label="Medium" />
-              <BubbleButton label="Low" />
-              <BubbleButton label="None" />
-            </div>
+  {/* FILTER GROUP */}
+  <div className="flex flex-wrap items-center gap-3">
+    <BubbleIcon Icon={Search} />
+    <BubbleIcon Icon={SlidersHorizontal} />
+    <BubbleButton label="All" active />
+    <BubbleButton label="🔥 Hot Client" />
+    <BubbleButton label="Great interest" />
+    <BubbleButton label="Medium" />
+    <BubbleButton label="Low" />
+    <BubbleButton label="None" />
+  </div>
 
-          </div>
+</div>
 
           {/* Leads Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
@@ -315,27 +357,32 @@ function LightPage() {
         {/* YOUR DAYS TASKS */}
         <section className="mb-24 px-2">
 
-          <div className="flex items-center gap-10 mb-10">
+          <div className="flex flex-wrap items-center gap-6 mb-10">
 
-            <h2 className="text-3xl font-bold">Your Days Tasks</h2>
+  {/* TITLE */}
+  <h2 className="text-3xl font-bold">Your Days Tasks</h2>
 
-            <span className="text-gray-400 text-lg border-b-2 border-gray-800 pb-1 cursor-pointer">
-              16 Leads
-            </span>
+  {/* LEAD COUNT */}
+  <span className="text-gray-400 text-lg border-b-2 border-gray-800 pb-1 cursor-pointer">
+    16 Leads
+  </span>
 
-            <div className="w-1"></div>
+  {/* SPACER — hide on small screens */}
+  <div className="w-1 hidden md:block"></div>
 
-            <div className="flex items-center gap-3">
-              <BubbleIcon Icon={Search} />
-              <BubbleIcon Icon={SlidersHorizontal} />
-              <BubbleButton label="All" active />
-              <BubbleButton label="🔥 Hot" />
-              <BubbleButton label="Due Today" />
-              <BubbleButton label="Over due" />
-              <BubbleButton label="Completed" />
-            </div>
+  {/* FILTER ICONS + BUTTONS */}
+  <div className="flex flex-wrap items-center gap-3">
+    <BubbleIcon Icon={Search} />
+    <BubbleIcon Icon={SlidersHorizontal} />
+    <BubbleButton label="All" active />
+    <BubbleButton label="🔥 Hot" />
+    <BubbleButton label="Due Today" />
+    <BubbleButton label="Over due" />
+    <BubbleButton label="Completed" />
+  </div>
 
-          </div>
+</div>
+
 
           <div className="flex gap-6 w-full pr-10 overflow-x-auto md:overflow-x-hidden">
 
